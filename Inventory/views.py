@@ -9,3 +9,7 @@ import datetime
 
 def add_product(request):
     return HttpResponse("product added successfully!")
+
+
+def add_New_Category_to_product_List(request):
+    return HttpResponse("Category added successfully!")

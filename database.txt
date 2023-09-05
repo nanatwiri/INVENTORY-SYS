@@ -1,0 +1,45 @@
+-- Create Suppliers table
+CREATE TABLE Suppliers (
+    SupplierID INT PRIMARY KEY AUTO_INCREMENT,
+    SupplierName VARCHAR(255),
+    ContactName VARCHAR(255),
+    ContactNumber VARCHAR(50),
+    Address TEXT
+);
+
+-- Create Products table
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY AUTO_INCREMENT,
+    ProductName VARCHAR(255),
+    SupplierID INT,
+    UnitPrice DECIMAL(10, 2),
+    Description TEXT,
+    FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID)
+);
+
+-- Create Inventory table
+CREATE TABLE Inventory (
+    InventoryID INT PRIMARY KEY AUTO_INCREMENT,
+    ProductID INT,
+    QuantityInStock INT,
+    ReorderLevel INT,
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+-- Create Sales table
+CREATE TABLE Sales (
+    SalesID INT PRIMARY KEY AUTO_INCREMENT,
+    ProductID INT,
+    QuantitySold INT,
+    DateOfSale DATE,
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+-- Create Employees table
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName VARCHAR(255),
+    LastName VARCHAR(255),
+    Position VARCHAR(255),
+    ContactNumber VARCHAR(50)
+);

@@ -8,14 +8,11 @@
 </head>
 
 <body>
-    {% for item in items %}
-    <p>Name: {{ item.name }}</p>
-    <p>Description: {{ item.description }}</p>
-    <a href="{% url 'edit_item' item.id %}">Edit</a>
-    <a href="{% url 'delete_item' item.id %}">Delete</a>
-    {% endfor %}
+    (% extends "Inventory/Inventory.html" %)
 
-    <a href="{% url 'add_item' %}">Add New Item</a>
+    {% block content %}
+    <P>ADD ITEM: </P>
+    {% endblock content%}
 </body>
 
 </html>

@@ -8,14 +8,11 @@
 </head>
 
 <body>
-    <h1>Edit Inventory Item</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save changes</button>
-    </form>
+    (% extends "Inventory/Inventory.html" %)
 
-    <a href="{% url 'inventory_item_list' %}">Back to Inventory List</a>
+    {% block content %}
+    <P>EDIT ITEM: </P>
+    {% endblock content%}
 </body>
 
 </html>

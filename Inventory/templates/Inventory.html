@@ -8,15 +8,8 @@
 </head>
 
 <body>
-    {% for item in items %}
-    {{ item.name }}: Price = ${{ item.price }}, Quantity = {{ item.quantity }}<br>
-    {% endfor %}
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Add Item">
-    </form>
+    {% block content %}
+    {% endblock content%}
 </body>
 
 </html>

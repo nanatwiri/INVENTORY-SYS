@@ -4,19 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIST:</title>
+    <title>ITEM LIST:</title>
 </head>
 
 <body>
-    {% for item in items %}
-    <p>Name: {{ item.name }}</p>
-    <p>Price: ${{ item.price }}</p>
-    <p>Quantity: {{ item.quantity }}</p>
-    <a href="{% url 'edit_inventory_item' item.id %}">Edit</a>
-    <a href="{% url 'delete_inventory_item' item.id %}">Delete</a>
-    {% endfor %}
+    (% extends "Inventory/Inventory.html" %)
 
-    <a href="{% url 'add_inventory_item' %}">Add New Inventory Item</a>
+    {% block content %}
+    <P>VIEW LIST: </P>
+    {% endblock content%}
 </body>
 
 </html>

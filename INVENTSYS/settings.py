@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Inventory',
     'debug_toolbar'
+    'crispy_forms'
 ]
+
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -108,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Internationalization
